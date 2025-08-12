@@ -68,7 +68,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #hero h1 {
-    font-size: 5rem;
+    font-size: clamp(3rem, 5vw, 7rem);
     margin: 0;
     padding: 20px 0;
 }
@@ -78,6 +78,9 @@ h1, h2, h3, h4, h5, h6 {
 .backgroud-color {
     background-color:rgba(0, 0, 0, 0.452);
      height: 30vh;
+     display: flex;
+     justify-content: center;
+     align-items: center;
 }
 
 #content-outside {
@@ -85,4 +88,19 @@ h1, h2, h3, h4, h5, h6 {
     background-color: var(--light-blue);
     padding: var(--content-padding);
     
+}
+
+
+#content img {
+    border: #3a2a00 1px solid;
+    object-fit: cover;
+    aspect-ratio: 16/9;
+    width: 300px;
+}
+    
+#content img.img-right {
+
+    float: right;
+    margin-left: 20px;
+    margin-bottom: 20px;
 }
