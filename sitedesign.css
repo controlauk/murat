@@ -58,7 +58,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .topnav {
   overflow: hidden;
-  background-color: #333;
 }
 
 .topnav a {
@@ -72,17 +71,21 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .topnav a:hover {
-  background-color: #ddd;
-  color: black;
+  background-color: var(--light-blue);
+  color: var(--dark-brown) !important;
 }
 
 .topnav a.active {
-  background-color: #04AA6D;
-  color: white;
+  background-color: var(--main-blue);
+  color: var(--dark-brown) !important;
 }
 
 .topnav .icon {
   display: none;
+}
+
+.topnav .icon:hover {
+  color: var(--dark-brown) !important;
 }
 
 @media screen and (max-width: 600px) {
