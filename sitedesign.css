@@ -53,12 +53,15 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: column;
     align-items: center;
   }
+  
 }
 
 .site-nav {}
 .site-nav ul { display: flex; gap: 1rem;}
 .site-nav li { list-style-type: none;}
-.site-nav a {}
+.site-nav a { text-decoration: none;}
+
+
 
 
 #hero-outside {
