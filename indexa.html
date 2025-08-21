@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Yalova</title>
+  <meta name="description" content="Yalova, the land of the flowers.">
+  <!-- note: meta keywords are obsolete for SEO, safe to remove -->
+  <meta name="author" content="Murat Yalcin">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Macondo&family=Open+Sans:wght@300..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="sitedesign.css">
+  <style>
+    /* Accessibility helpers */
+    .skip-to-content {
+      position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;
+    }
+    .skip-to-content:focus { 
+      position:static; width:auto; height:auto; padding:.5rem 1rem; 
+      outline:2px solid; outline-offset:2px; 
+      background:#fff;
+    }
+    /* Ensure focus is visible on links/buttons */
+    a:focus, button:focus { outline:2px solid; outline-offset:2px; }
+  </style>
+</head>
+
+<body>
+  <!-- 2.4.1 Bypass blocks -->
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+  <header id="siteheader" role="banner">
+    <div class="site-title">
+      <!-- Keep this not an H1 so hero can be the single H1 -->
+      <p class="h4 m-0"><a href="index.html">Yalova</a></p>
+      <p class="m-0">The land of the flowers</p>
+    </div>
+
+    <!-- Primary navigation (mobile) -->
+    <nav class="topnav" id="primary-nav" aria-label="Primary">
+      <button class="icon btn btn-link p-0" 
+              id="menuButton" 
+              aria-controls="menuLinks" 
+              aria-expanded="false" 
+              aria-label="Open main menu">
+        <i class="bi bi-list" aria-hidden="true"></i>
+      </button>
+
+      <ul id="menuLinks" class="list-unstyled m-0">
+        <li><a href="index.html" aria-current="page" class="active">Home</a></li>
+        <li><a href="history.html">History</a></li>
+        <li><a href="where-to-go.html">Where to go</a></li>
+        <li><a href="where-to-stay.html">Where to stay</a></li>
+        <li><a href="transport.html">Transport</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="hero-outside" aria-labelledby="page-title">
+    <div class="backgroud-color">
+      <div id="hero">
+        <!-- Single H1 for the page -->
+        <h1 id="page-title">Yalova</h1>
+        <p>The land of the flowers</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN landmark -->
+  <main id="main-content">
+    <article id="content">
+      <h2>Welcome to the Heart of Turkish Beauty</h2>
+      <p>
+        <img src="images/ataturk-mansion.png" 
+             alt="Atatürk Mansion in Yalova surrounded by gardens" 
+             width="200" height="200" class="img-right">
+        Turkey, with its enchanting nature, diverse climate, and ancient history, is considered one of the world’s leading tourism destinations. ...
+      </p>
+      <!-- rest of your content -->
+    </article>
+  </main>
+
+  <footer id="footer" role="contentinfo">
+    <p>Copyright &copy; 2025 Murat Yalcin</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+
+  <script>
+    // Accessible menu toggle (2.1.1 Keyboard, 4.1.2 Name/Role/Value)
+    (function () {
+      var btn = document.getElementById('menuButton');
+      var menu = document.getElementById('menuLinks');
+
+      // start collapsed on mobile
+      menu.hidden = true;
+
+      function toggleMenu() {
+        var expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!expanded));
+        menu.hidden = expanded; // show when not expanded
+      }
+
+      btn.addEventListener('click', toggleMenu);
+      btn.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleMenu(); }
+      });
+    })();
+  </script>
+</body>
+</html>
